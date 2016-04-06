@@ -8,7 +8,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
 </head>
 <body data-no-turbolink>
-
+    <p>
+    <span> <strong> Links: </strong></span>
+    <span> <%= link_to('Home', controller: 'welcome') %> </span>
+    <span> <%= link_to('Data Nodes', controller: 'nodes') %> </span>
+    </p>
+    <hr />
 <%= yield %>
 
 </body>
