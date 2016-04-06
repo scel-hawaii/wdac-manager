@@ -5,3 +5,24 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+def seed_nodes
+  nodes = [
+    {
+      address: 151,
+      design: 'Apple'
+    },
+    {
+      address: 888,
+      design: 'Dragonfruit'
+    },
+    {
+      address: 889,
+      design: 'Cranberry'
+    }
+    ]
+  Node.create(nodes)
+end
+
+seed_nodes
