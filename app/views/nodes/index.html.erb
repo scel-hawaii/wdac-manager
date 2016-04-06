@@ -17,12 +17,12 @@
     <% @nodes.each do |node| %>
       <tr>
         <td><%= node.address %></td>
-        <td><%= node.description %></td>
         <td><%= node.design %></td>
+        <td><%= node.description %></td>
         <td><%= node.name %></td>
         <td><%= link_to 'Show', node %></td>
         <td><%= link_to 'Edit', edit_node_path(node) %></td>
-        <td><%= link_to 'Destroy', node, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- <td><%= link_to 'Destroy', node, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
