@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>Address:</strong>
   <%= @node.address %>
@@ -19,6 +20,9 @@
   <strong>Name:</strong>
   <%= @node.name %>
 </p>
+
+<h3>Battery Voltage</h3>
+<div class="nodeGraph" id="node-graph" data-nodeAddress="<%=@node.address%>" style="height:300px; width:500px"></div>
 
 <%= link_to 'Edit', edit_node_path(@node) %> |
 <%= link_to 'Back', nodes_path %>
