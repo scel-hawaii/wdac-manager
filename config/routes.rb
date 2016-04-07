@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :datasets
   get 'welcome/index'
 
   resources :nodes

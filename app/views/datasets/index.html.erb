@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Datasets</h1>
+
+<p>Datasets are specific windows of data that you can query. Useful
+if you're running tests or if you want to show off a particular
+set of data.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Author</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @datasets.each do |dataset| %>
+      <tr>
+        <td><%= dataset.name %></td>
+        <td><%= dataset.address %></td>
+        <td><%= dataset.author %></td>
+        <td><%= link_to 'Show', dataset %></td>
+        <td><%= link_to 'Edit', edit_dataset_path(dataset) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dataset', new_dataset_path %>
