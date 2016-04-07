@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @dataset.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @dataset.end_time %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @dataset.address %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dataset.name %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @dataset.author %>
+</p>
+
+<%= link_to 'Edit', edit_dataset_path(@dataset) %> |
+<%= link_to 'Back', datasets_path %>
