@@ -19,10 +19,9 @@ set of data.
   <tbody>
     <% @datasets.each do |dataset| %>
       <tr>
-        <td><%= dataset.name %></td>
+        <td><%= link_to dataset.name , dataset %></td>
         <td><%= dataset.address %></td>
         <td><%= dataset.author %></td>
-        <td><%= link_to 'Show', dataset %></td>
         <td><%= link_to 'Edit', edit_dataset_path(dataset) %></td>
       </tr>
     <% end %>
