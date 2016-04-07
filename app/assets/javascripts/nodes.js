@@ -9,7 +9,17 @@ function createBatteryChart(options){
 }
 
 function getData(options){
-  $.get("http://192.168.1.98:16906/battery/" + options.endpoint, function(data){
+  var query_string = ""
+  if( typeof options.start_time !== 'undefined'){
+      query = {
+          start_time: options.start_time,
+          end_time: options.end_time
+      }
+      query_string = $.param(query);
+  }
+  var url = "http://192.168.1.98:16906/battery/" + options.endpoint + "?" + query_string;
+  console.log(url);
+  $.get(url, function(data){
     createChart(data, options);
   });
 }
@@ -37,24 +47,23 @@ function createChart(data, options){
     chart.render();
 }
 
-
-$(document).ready(function(){
-    console.log("ready");
+function renderGraphs(){
     $(".nodeGraph").each(function(){
         options = {
             element: this.id,
-            endpoint: this.dataset.nodeaddress
+            endpoint: this.dataset.nodeaddress,
+            start_time: this.dataset.start_time,
+            end_time: this.dataset.end_time
         }
         createBatteryChart(options);
     });
+}
 
+$(document).ready(function(){
+    console.log("Document Ready");
+
+    renderGraphs();
     setInterval(function(){
-        $(".nodeGraph").each(function(){
-            options = {
-                element: this.id,
-                endpoint: this.dataset.nodeaddress
-            }
-            createBatteryChart(options);
-        });
+        renderGraphs();
     }, 60*1000);
 });

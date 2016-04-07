@@ -25,5 +25,10 @@
   <%= @dataset.author %>
 </p>
 
+<div class="nodeGraph" id="node-graph"
+        data-start_time="<%= @dataset.start_time %>"
+        data-end_time="<%= @dataset.end_time %>"
+        data-nodeAddress="<%= @dataset.address %>" style="height:300px; width:500px"></div>
+
 <%= link_to 'Edit', edit_dataset_path(@dataset) %> |
 <%= link_to 'Back', datasets_path %>
