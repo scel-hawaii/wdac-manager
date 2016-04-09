@@ -36,6 +36,12 @@ function createChart(data, options){
 
     var chart = new CanvasJS.Chart(options.element,
     {
+      axisX: {
+      },
+      axisY: {
+          minimum: 2000,
+          maximum: 4500
+      },
       zoomEnabled: true,
       data: [
       {
